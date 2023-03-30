@@ -1,0 +1,44 @@
+body {
+  margin: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.button {
+  background-color: rgb(255, 85, 0);
+  border: 1px solid rgb(196, 160, 160);
+  border-radius: 5px;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+
+.boxColor div {
+  height: 44px;
+  width: 80px;
+  text-align: center;
+  margin: 20px 10px 0px 10px;
+  padding-top: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.boxColor input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
