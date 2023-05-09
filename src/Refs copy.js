@@ -6,28 +6,30 @@ function Refs() {
   let sessionRef = React.useRef(false);
   const inputRef = React.useRef(null);
   const buttonRef = React.useRef(null);
-  let keepRef = React.useRef(1); 
-  let functionRef = React.useRef(() => { console.log('test')}) // can storage function or react component
-  let abc = 1;
+  const [forceRender, setfForceRender] = React.useState(Date.now());
 
   React.useEffect(() => {
-    buttonRef.current.style.backgroundColor = '#f00'
     inputRef.current.focus();
-    keepRef.current = keepRef.current + 3;
+    buttonRef.current.style.backgroundColor = '#f00'
   },[])
+
+  const functionTest = (numb) => () => {
+    console.log('functionTest: ', numb)
+  }
+
+  console.log('render refs: ')
   
   return (
-    <div>
+    <div key={forceRender}>
       <h2>Refs</h2> <br />
-      <input ref={inputRef} type="text" id="inputFile" />
+      <input ref={inputRef} type="text" />
       <button 
         type="button"
         onClick={() => {
           setSession(true);
-          abc = abc + 1;
-          keepRef.current = keepRef.current + 1;
           sessionRef.current = true;
           inputRef.current.focus();
+          setfForceRender(Date.now())
         }}
       >
         Update Session
@@ -38,6 +40,10 @@ function Refs() {
       <Button 
         ref={buttonRef}
         text="Forward Ref"
+        onClick={functionTest(10)}
+        // onClick={() => {
+        //   functionTest(10)
+        // }}
       />
     </div>
   )
