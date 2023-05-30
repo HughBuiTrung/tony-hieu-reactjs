@@ -9,7 +9,7 @@ export default function SkipFirstRenderEffect() {
       skipFirstRenderRef.current = false;
       return
     }
-    console.log('run effect')
+    console.log('run effect', count)
   },  [count])
   
   return (
